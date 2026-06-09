@@ -1,6 +1,7 @@
 class Product:
     """
     A class used to represent a product
+
     Attributes
     ----------
     name : str
