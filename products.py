@@ -104,7 +104,6 @@ class Product:
         purchase_price = quantity * self.price
         new_quantity = self.quantity - quantity
         if new_quantity < 0:
-            raise ValueError(f"There are not enough items of this product."
-                             f" Available Items: {self.quantity}")
+            raise ValueError("Error while making order! Quantity larger than what exists.")
         self.set_quantity(new_quantity)
         return purchase_price

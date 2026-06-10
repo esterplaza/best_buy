@@ -60,7 +60,8 @@ class Store:
                 active_products.append(product)
         return active_products
 
-    def order(self, shopping_list):
+    @staticmethod
+    def order(shopping_list):
         """
         Gets a list of tuples, where each tuple has 2 items:
         Product (Product class) and quantity (int).
