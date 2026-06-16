@@ -78,13 +78,16 @@ def make_order(products_in_store):
         try:
             order_product_int = int(order_product)
             order_amount_int = int(order_amount)
+            if order_amount_int <= 0:
+                raise ValueError("Quantity must be positive")
             if 1 > order_product_int or order_product_int > len(available_products):
-                raise ValueError
+                raise ValueError("This product is not available.")
             user_order.append((available_products[order_product_int - 1], order_amount_int))
             print("Product added to list!")
             print()
-        except ValueError:
-            print("Error adding product!")
+        except ValueError as e:
+            print("Error adding product!", end=" ")
+            print(e)
             print()
     if user_order:
         try:
